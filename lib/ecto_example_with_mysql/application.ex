@@ -10,6 +10,7 @@ defmodule EctoExampleWithMysql.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
+      supervisor(EctoExampleWithMysql.Repo, [])
       # Starts a worker by calling: EctoExampleWithMysql.Worker.start_link(arg1, arg2, arg3)
       # worker(EctoExampleWithMysql.Worker, [arg1, arg2, arg3]),
     ]

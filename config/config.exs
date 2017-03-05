@@ -2,6 +2,20 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+config :ecto_example_with_mysql, EctoExampleWithMysql.Repo,
+  adapter: Ecto.Adapters.MySQL,
+  database: "ecto_example_with_mysql_repo",
+  username: "root",
+
+  # This app is just an example.
+  # Do not write down the password here when developing your app. Use environment variables instead :)
+  password: "password",
+  hostname: "mysql"
+
+config :ecto_example_with_mysql,
+  ecto_repos: [EctoExampleWithMysql.Repo]
+
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
